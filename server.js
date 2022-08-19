@@ -1,5 +1,6 @@
 const express = require('express')
 const app = express()
+require('dotenv').config()
 const cors = require('cors')
 const bodyParser = require('body-parser')
 const fs = require('fs')
@@ -92,16 +93,16 @@ app.get('/post', async (req, res) => {
 })
 
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('client/build'))
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
-    })
-}
+//if (process.env.NODE_ENV === 'production') {
+//    app.use(express.static('client/build'))
+//    app.get('*', (req, res) => {
+//        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+//    })
+//}
 
-//app.get('/', (req, res) => {
-//    res.send('Hello World')
-//})
+app.get('/', (req, res) => {
+    res.send('Hello World')
+})
 
 app.listen(PORT, () => {
     console.log(`App listening on port ${PORT}`)

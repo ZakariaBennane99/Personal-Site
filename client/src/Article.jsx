@@ -1,7 +1,7 @@
 import './style.css'
+import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import Header from './Header'
-import img from './cat.jpg'
 
 
 function Article () {
@@ -12,7 +12,6 @@ function Article () {
       <>
         <Header />
         <div className='article-container'>
-            
         </div>
       </>
     )
